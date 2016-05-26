@@ -1,0 +1,61 @@
+
+body{
+	background-color:#dfdfdf;
+}
+#bienvenida
+{
+	border: 1px solid #00bfa5;
+	margin: 10px;
+    background-color:#000;
+}
+#chat
+{
+	margin: 10px;
+	border: 1px solid #00bfa5;
+	display: none;
+} 
+
+.icono{
+	position:relative;
+	bottom:50px;
+
+}
+.fondo{
+	position: absolute;
+    z-index: -1;
+    background-image: #009688;
+    width: 100%;
+    content: '';
+    top: 0;
+    left: 0;
+}
+#window {
+	margin: 30px auto;
+    background-color: #FFF;
+    border-radius: 3px;
+    -webkit-box-flex: 0;
+    -webkit-flex: none;
+    -ms-flex: none;
+    flex: none;
+    z-index: 2;
+    overflow: hidden;
+}
+#oculto{
+	display:none;
+}
+
+.panel-body{
+	height:500px;
+    background-image: url(https://images.alphacoders.com/117/11731.jpg);
+}
+.label-chat{
+    background-color: #00cc7a;
+    font-family:'Orbitron', sans-serif;
+    font-size: 13px;
+}
+.label-chat:a{
+    text-decoration: none;
+}
+.label-chat a:hover{
+    text-decoration: none;
+}

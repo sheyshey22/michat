@@ -1,0 +1,14 @@
+{
+  "name": "wapp",
+  "version": "1.0.0",
+  "description": "este es un chat",
+  "main": "index.js",
+  "scripts": {
+    "start": "nodemon index.js"
+  },
+  "author": "sheyla",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.13.4"
+  }
+}
