@@ -1,19 +1,73 @@
 body {
   background-color: #dfdfdf; }
 
+.borde {
+  border: 2px solid #fff; }
+
+i {
+  width: 24px;
+  height: 24px;
+  margin-right: 10px; }
+
 #bienvenida {
-  border: 1px solid #00bfa5;
-  margin: 10px;
-  background-color: #000; }
+  color: #20B2AA;
+  background-color: #161616;
+  height: 700px;
+  font-family: 'Covered By Your Grace', cursive; }
+
+#nombre {
+  margin-top: 30px;
+  margin-bottom: 30px;
+  background-color: #161616;
+  border-top: 1px solid #161616;
+  border-right: 1px solid #161616;
+  border-left: 1px solid #161616;
+  border-bottom: 3px solid #fff;
+  font-size: 40px;
+  font-family: 'Covered By Your Grace', cursive;
+  padding: 30px;
+  text-align: center;
+  color: #fff;
+  width: 30%;
+  text-transform: uppercase; }
+
+button.boton {
+  font-family: 'Covered By Your Grace', cursive;
+  font-size: 35px;
+  padding: 10px;
+  background-color: #161616;
+  color: #20B2AA;
+  border-radius: 50px; }
+
+button.boton a {
+  color: #20B2AA;
+  text-decoration: none; }
+
+button.boton a:hover {
+  font-size: 20px;
+  padding: 8px; }
 
 #chat {
   margin: 10px;
-  border: 1px solid #00bfa5;
   display: none; }
 
-.icono {
-  position: relative;
-  bottom: 50px; }
+.header1 {
+  padding: 5px;
+  border: 1px solid #E0E0E0;
+  border-radius: 5px;
+  background-image: url(../image/fondo2.png);
+  margin-bottom: 20px; }
+
+.header1 input {
+  border: 1px solid #fff;
+  border-radius: 20px;
+  background-image: url(../image/fondo2.png); }
+
+.contactos {
+  overflow: scroll;
+  background-color: #333;
+  height: 480px;
+  background-image: url(../image/fondo2.png); }
 
 .fondo {
   position: absolute;
@@ -25,8 +79,8 @@ body {
   left: 0; }
 
 #window {
-  margin: 30px auto;
-  background-color: #FFF;
+  margin: 10px 40px 10px 80px;
+  background-color: #009688;
   border-radius: 3px;
   -webkit-box-flex: 0;
   -webkit-flex: none;
@@ -35,16 +89,13 @@ body {
   z-index: 2;
   overflow: hidden; }
 
-#oculto {
-  display: none; }
-
-.panel-body {
-  height: 500px;
-  background-image: url(https://images.alphacoders.com/117/11731.jpg); }
+.panel-chat {
+  background-image: url(../image/fondo2.png);
+  height: 400px; }
 
 .label-chat {
   background-color: #00cc7a;
-  font-family: 'Orbitron', sans-serif;
+  font-family: 'Covered By Your Grace', cursive;
   font-size: 13px; }
 
 .label-chat:a {
@@ -52,5 +103,13 @@ body {
 
 .label-chat a:hover {
   text-decoration: none; }
+
+.panel-footer i {
+  position: absolute; }
+
+.panel-footer input {
+  background-image: url(../image/fondo2.png);
+  padding: 5px;
+  color: #000; }
 
 /*# sourceMappingURL=main.css.map */

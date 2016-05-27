@@ -8,7 +8,7 @@
 	  	<link rel="shortcut icon" href="image/favicon.png" type="image/png">
 	  	<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:400,600%7CRoboto:300,400,500" media="all">
 		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
-		<link href='https://fonts.googleapis.com/css?family=Orbitron' rel='stylesheet' type='text/css'>
+		<link href='https://fonts.googleapis.com/css?family=Covered+By+Your+Grace' rel='stylesheet' type='text/css'>
 		<link rel="stylesheet" href="css/icomoon.css">
 		<link rel="stylesheet" href="css/bootstrap.min.css">
 		<link rel="stylesheet" href="css/main.css">
@@ -18,62 +18,59 @@
 		
 </head>
 <body>
-<div id="bienvenida" class="well">
-		<h3>Hola, por favor ingresa tu nombre para entrar al chat</h3>
+<div id="bienvenida" class="page1 container-fluid">
+		<center><img src="image/fondo1.gif">
+		<h1>Hola, ingresa tu nombre</h1>
 		<input type="text" id="nombre" class="form-control">
-		<button onclick="guardarNombre()">Entrar</button>
-</div>
-<div class="fondo container-fluid">	
-	<div class="container">
-		<div id="window" class="row">
-			<div class="col-md-4">
-				<div class="panel">
-					<img class="img-circle img-responsive" src="image/foto.jpg" alt=" " width="18%" >
-					<span class="icono pull-right icon-message"></span>
-					<span class="icono pull-right icon-dots-three-vertical"></span>	
-				</div>	
-				<div class="input-group">
-  					<span class="icono input-group-addon" id="basic-addon1"><i class=" icon-search"></i></span>
- 					<input type="search" class="form-control" placeholder="Buscar o empezar un chat nuevo...">
-				</div>	
-
-				</div>
-			<div class="col-md-8">
-			<div class="row">
-				<div class="col-md-2">
-					<a href="#">
-     				<img class="img-circle img-responsive" src="image/foto.jpg" alt=" " width="70%" >
-				</div>
-				<div class="col-md-7">
-					<h4 class="media-heading">Laboratoria</h4>
-    				<p>las conectadas...</p>
-				</div>
-				<div class="col-md-3">
-					<span class="icon-attachment"></span>
-					 <span class="icon-dots-three-vertical"></span>
-				</div>
-				</div>
-		
-			<div class="panel-body">
-				<ul id="lista_mensajes" class="list-group"></ul>
-
-
-			</div>
-				<div class="panel-footer">
-				  	<div class="input-group-btn"><span class="icon-insert_emoticon"></span></div>
-						<input type="text" id="mensaje" class="form-control">
-							<button onclick="enviarMensaje()">Enviar mensaje</button>
-							<button onclick="limpiarMensajes()">Limpiar mensajes</button>
-								<ul id="lista_mensajes" class="list-group"></ul>
-				  		 </div>
-				</div>
-			</div>
-		
+		<button class="boton" onclick="guardarNombre()"><a>Entrar</a></button>
+		<div
+				class="fb-like"
+				data-share="true"
+				data-width="450"
+				data-show-faces="true">
 		</div>
-		
+		</center>
+</div>
+<div id="chat" class="container">
+	<div id="window" class="row">
+		<div class="col-md-4 borde">
+			<div class="navbar">
+        			<img class="img-circle" alt="Conectado" src="image/foto.jpg" width="15%">
+        			<p class="navbar-text navbar-right">
+        				<i class="icon-message"></i>
+					 	<i class="icon-dots-three-vertical"></i><a href="#"></a></p>
+			</div>
+			<div class="header1">
+				<i class="icon-search"></i>
+				<input type="text" placeholder="Buscar o empezar un chat nuevo..." >
+			</div>			 
+			<div class="contactos borde">
+				<ul id="nombres" class="list-group"></ul>
+				<ul id="my-namespace"></ul>
+			</div>
+		</div>
+		<div class="col-md-8 borde">
+			<div class="navbar">
+        			<img class="img-circle" alt="Conectado" src="image/foto.jpg" width="15%">
+        			<p class="navbar-text navbar-right">
+        				<i class="icon-attachment"></i>
+					 	<i class="icon-dots-three-vertical"></i><a href="#"></a></p>
+				
+			</div>
+			<div class="panel-chat borde">
+				<ul id="lista_mensajes" class="list-group"></ul>
+			</div>
+			<div class="panel-footer">
+				  	<i class="icon-insert_emoticon"></i>
+					<input type="text" id="mensaje" class="form-control">
+						<button onclick="enviarMensaje()">Enviar</button>
+						<button onclick="limpiarMensajes()">Limpiar mensajes</button>
+			</div>
+		</div>
 	</div>
+</div>
 
-			<script>
+	<script>
 		window.fbAsyncInit = function() {
 			FB.init({
 				appId      : '473652582845207',
@@ -119,6 +116,20 @@
 			$('#lista_mensajes').append('<li class="list-group-item">' + _msg + '</li>');
 		});
 
+	</script>
+	<script>
+	  var socket = io();
+	  $('form').submit(function(){
+	    socket.emit('chat', $('#m').val());
+	    $('#m').val('');
+	    return false;
+	  });
+	  socket.on('chat', function(msg){
+	    $('#mensaje').append($('<li>').text(msg));
+	  });
+	</script>
+	<script>
+		var socket=io('my-namespace')
 	</script>
 </div>	
 </body>
