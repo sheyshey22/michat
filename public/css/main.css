@@ -72,11 +72,15 @@ button.boton a:hover {
 .fondo {
   position: absolute;
   z-index: -1;
-  background-image: #009688;
+  background-color: #009688;
   width: 100%;
-  content: '';
   top: 0;
   left: 0; }
+
+.estado input {
+  margin-top: 20px;
+  padding: 20px;
+  width: 100%; }
 
 #window {
   margin: 10px 40px 10px 80px;

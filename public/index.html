@@ -50,21 +50,34 @@
 			</div>
 		</div>
 		<div class="col-md-8 borde">
-			<div class="navbar">
-        			<img class="img-circle" alt="Conectado" src="image/foto.jpg" width="15%">
-        			<p class="navbar-text navbar-right">
-        				<i class="icon-attachment"></i>
-					 	<i class="icon-dots-three-vertical"></i><a href="#"></a></p>
-				
+			<div class="row navbar">
+				<div class="col-md-2"><img class="img-circle img-responsive" alt="Conectado" src="image/foto.jpg"></div>
+        		<div class="col-md-8 estado">
+        			<input type="text" name="feel" placeholder="Quieres Compartir algo?">	
+        		</div>	
+        		<div class="col-md-2">
+        			<br>	
+        			<i class="icon-attachment"></i>
+					<i class="icon-dots-three-vertical"></i><a href="#"></a></	p>
+				</div>
 			</div>
 			<div class="panel-chat borde">
 				<ul id="lista_mensajes" class="list-group"></ul>
 			</div>
 			<div class="panel-footer">
-				  	<i class="icon-insert_emoticon"></i>
-					<input type="text" id="mensaje" class="form-control">
-						<button onclick="enviarMensaje()">Enviar</button>
-						<button onclick="limpiarMensajes()">Limpiar mensajes</button>
+				<div class="row">
+					<div class="col-md-1">
+					  	<i class="icon-insert_emoticon pull-left"></i>
+					</div>  
+					<div class="col-md-10">	
+						<input type="text" id="mensaje" class="form-control">
+							<button onclick="enviarMensaje()">Enviar</button>
+							<button onclick="limpiarMensajes()">Limpiar mensajes</button>
+					</div> 
+					<div class="col-md-1">
+					  	<i class="icon-mic pull-right"></i>
+					</div>
+				</div>
 			</div>
 		</div>
 	</div>
